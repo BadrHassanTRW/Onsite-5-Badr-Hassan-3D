@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import Toast from '../components/Toast';
+import { API_ENDPOINTS } from '../config';
 
 function Home() {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -14,6 +15,11 @@ function Home() {
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const { addToCart } = useCart();
+
+  // Set page title
+  useEffect(() => {
+    document.title = 'ShopEasy - Home';
+  }, []);
 
   // Fetch featured products when page loads
   useEffect(() => {
@@ -26,7 +32,7 @@ function Home() {
    */
   const fetchFeaturedProducts = async () => {
     try {
-      const response = await fetch('http://localhost/Badr%20Hassan%20Onsite%205%203D/backend/get_products.php');
+      const response = await fetch(API_ENDPOINTS.GET_PRODUCTS);
       const data = await response.json();
       
       if (data.success) {

@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import Toast from '../components/Toast';
+import { API_ENDPOINTS } from '../config';
 
 function ProductDetails() {
   const { id } = useParams(); // Get product ID from URL
@@ -14,6 +15,13 @@ function ProductDetails() {
   const [loading, setLoading] = useState(true);
   const [showToast, setShowToast] = useState(false);
   const { addToCart } = useCart();
+
+  // Set dynamic page title
+  useEffect(() => {
+    if (product) {
+      document.title = `ShopEasy - ${product.name}`;
+    }
+  }, [product]);
 
   // Fetch product details when page loads
   useEffect(() => {
@@ -25,7 +33,7 @@ function ProductDetails() {
    */
   const fetchProduct = async () => {
     try {
-      const response = await fetch(`http://localhost/Badr%20Hassan%20Onsite%205%203D/backend/get_product.php?id=${id}`);
+      const response = await fetch(`${API_ENDPOINTS.GET_PRODUCT}?id=${id}`);
       const data = await response.json();
       
       if (data.success) {

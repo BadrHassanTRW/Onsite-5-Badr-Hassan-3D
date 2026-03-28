@@ -3,11 +3,17 @@
  * Displays all items in cart with ability to update quantities and remove items
  */
 
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 function Cart() {
   const { cart, removeFromCart, updateQuantity, getCartTotal } = useCart();
+
+  // Set page title
+  useEffect(() => {
+    document.title = 'ShopEasy - Shopping Cart';
+  }, []);
 
   /**
    * HANDLE QUANTITY CHANGE

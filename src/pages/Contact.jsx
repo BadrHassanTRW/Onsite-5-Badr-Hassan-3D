@@ -14,6 +14,11 @@ function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  // Set page title
+  useEffect(() => {
+    document.title = 'ShopEasy - Contact Us';
+  }, []);
+
   /**
    * HANDLE INPUT CHANGE
    */

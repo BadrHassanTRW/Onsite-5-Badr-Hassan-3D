@@ -6,6 +6,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { API_ENDPOINTS } from '../config';
 
 function Checkout() {
   const navigate = useNavigate();
@@ -21,6 +22,11 @@ function Checkout() {
   
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  // Set page title
+  useEffect(() => {
+    document.title = 'ShopEasy - Checkout';
+  }, []);
 
   // Redirect to cart if cart is empty
   if (cart.length === 0) {
@@ -67,7 +73,7 @@ function Checkout() {
       };
 
       // Send POST request to PHP checkout API
-      const response = await fetch('http://localhost/Badr%20Hassan%20Onsite%205%203D/backend/checkout.php', {
+      const response = await fetch(API_ENDPOINTS.CHECKOUT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

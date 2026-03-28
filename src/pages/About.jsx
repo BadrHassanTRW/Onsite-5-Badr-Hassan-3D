@@ -3,7 +3,14 @@
  * Static informational page about the company
  */
 
+import { useEffect } from 'react';
+
 function About() {
+  // Set page title
+  useEffect(() => {
+    document.title = 'ShopEasy - About Us';
+  }, []);
+
   return (
     <div className="container py-5">
       <div className="row justify-content-center">
