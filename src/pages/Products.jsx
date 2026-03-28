@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import Toast from '../components/Toast';
-import { API_ENDPOINTS } from '../config';
+import { API_ENDPOINTS, fetchWithFallback } from '../config';
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -35,17 +35,16 @@ function Products() {
   }, [searchTerm, selectedCategory, products]);
 
   /**
-   * FETCH ALL PRODUCTS FROM PHP API
+   * FETCH ALL PRODUCTS (PHP or JSON fallback)
    */
   const fetchProducts = async () => {
     try {
-      const response = await fetch(API_ENDPOINTS.GET_PRODUCTS);
-      const data = await response.json();
+      const data = await fetchWithFallback(API_ENDPOINTS.GET_PRODUCTS);
       
-      if (data.success) {
-        setProducts(data.data);
-        setFilteredProducts(data.data);
-      }
+      // Handle both PHP format and JSON format
+      const productList = data.success ? data.data : data;
+      setProducts(productList);
+      setFilteredProducts(productList);
     } catch (error) {
       console.error('Error fetching products:', error);
     } finally {

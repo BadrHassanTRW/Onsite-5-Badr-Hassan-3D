@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import Toast from '../components/Toast';
-import { API_ENDPOINTS } from '../config';
+import { API_ENDPOINTS, fetchWithFallback } from '../config';
 
 function Home() {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -27,18 +27,16 @@ function Home() {
   }, []);
 
   /**
-   * FETCH FEATURED PRODUCTS FROM PHP API
-   * Gets first 6 products to display on home page
+   * FETCH FEATURED PRODUCTS
+   * Gets first 6 products (PHP or JSON fallback)
    */
   const fetchFeaturedProducts = async () => {
     try {
-      const response = await fetch(API_ENDPOINTS.GET_PRODUCTS);
-      const data = await response.json();
+      const data = await fetchWithFallback(API_ENDPOINTS.GET_PRODUCTS);
       
-      if (data.success) {
-        // Get only first 6 products for featured section
-        setFeaturedProducts(data.data.slice(0, 6));
-      }
+      // Handle both PHP format and JSON format
+      const products = data.success ? data.data : data;
+      setFeaturedProducts(products.slice(0, 6));
     } catch (error) {
       console.error('Error fetching products:', error);
     } finally {

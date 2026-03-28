@@ -3,10 +3,10 @@
  * Customer form to complete the order
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { API_ENDPOINTS } from '../config';
+import { API_ENDPOINTS, fetchWithFallback } from '../config';
 
 function Checkout() {
   const navigate = useNavigate();
@@ -57,7 +57,7 @@ function Checkout() {
 
   /**
    * HANDLE FORM SUBMIT
-   * Sends order data to PHP backend
+   * Sends order data (PHP or JSON fallback)
    */
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,8 +72,8 @@ function Checkout() {
         cart_items: cart
       };
 
-      // Send POST request to PHP checkout API
-      const response = await fetch(API_ENDPOINTS.CHECKOUT, {
+      // Send POST request (with fallback)
+      const data = await fetchWithFallback(API_ENDPOINTS.CHECKOUT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -81,12 +81,10 @@ function Checkout() {
         body: JSON.stringify(orderData)
       });
 
-      const data = await response.json();
-
       if (data.success) {
-        // Clear cart and show success message
+        // Clear cart and show success
         clearCart();
-        alert(`Order placed successfully! Order ID: ${data.order_id}`);
+        alert(`Order placed successfully!${data.order_id ? ` Order ID: ${data.order_id}` : ''}`);
         navigate('/');
       } else {
         setError(data.message || 'Failed to place order');
