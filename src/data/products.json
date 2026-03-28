@@ -19,15 +19,6 @@
       "stock": 100
     },
     {
-      "id": 3,
-      "name": "Bluetooth Speaker",
-      "description": "Portable waterproof speaker with 360-degree sound, deep bass, and 12-hour battery life. Perfect for outdoor adventures and parties.",
-      "price": 59.99,
-      "image_url": "https://images.pexels.com/photos/1279406/pexels-photo-1279406.jpeg?auto=compress&cs=tinysrgb&w=500",
-      "category": "Electronics",
-      "stock": 100
-    },
-    {
       "id": 4,
       "name": "Wireless Mouse",
       "description": "Ergonomic wireless mouse with adjustable DPI, silent clicks, and long battery life. Compatible with all devices and operating systems.",
@@ -41,15 +32,6 @@
       "name": "USB-C Hub",
       "description": "7-in-1 USB-C hub with HDMI, USB 3.0 ports, SD card reader, and power delivery. Essential for modern laptops and tablets.",
       "price": 34.99,
-      "image_url": "https://images.pexels.com/photos/4195325/pexels-photo-4195325.jpeg?auto=compress&cs=tinysrgb&w=500",
-      "category": "Electronics",
-      "stock": 100
-    },
-    {
-      "id": 6,
-      "name": "Webcam HD",
-      "description": "1080p HD webcam with auto-focus, built-in microphone, and wide-angle lens. Perfect for video calls and streaming.",
-      "price": 49.99,
       "image_url": "https://images.pexels.com/photos/4195325/pexels-photo-4195325.jpeg?auto=compress&cs=tinysrgb&w=500",
       "category": "Electronics",
       "stock": 100
@@ -154,15 +136,6 @@
       "stock": 100
     },
     {
-      "id": 18,
-      "name": "Yoga Mat Premium",
-      "description": "Extra thick yoga mat with non-slip surface, carrying strap, and eco-friendly material. Perfect for yoga, pilates, and stretching.",
-      "price": 29.99,
-      "image_url": "https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=500",
-      "category": "Sports",
-      "stock": 100
-    },
-    {
       "id": 19,
       "name": "Water Bottle",
       "description": "Insulated stainless steel water bottle keeps drinks cold for 24 hours or hot for 12 hours. Leak-proof lid and wide mouth opening.",
@@ -190,15 +163,6 @@
       "stock": 100
     },
     {
-      "id": 22,
-      "name": "Gym Bag",
-      "description": "Spacious gym bag with shoe compartment, water bottle holder, and multiple pockets. Durable and stylish for all your workout gear.",
-      "price": 39.99,
-      "image_url": "https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=500",
-      "category": "Sports",
-      "stock": 100
-    },
-    {
       "id": 23,
       "name": "Laptop Backpack",
       "description": "Durable laptop backpack with padded compartment for 15.6\" laptops, USB charging port, water-resistant material, and multiple pockets.",
@@ -213,15 +177,6 @@
       "description": "Protective phone case with shock absorption, raised edges, and slim design. Available for all major phone models.",
       "price": 14.99,
       "image_url": "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=500",
-      "category": "Accessories",
-      "stock": 100
-    },
-    {
-      "id": 25,
-      "name": "Wallet Leather",
-      "description": "Genuine leather wallet with RFID blocking, multiple card slots, and bill compartment. Slim design fits comfortably in pocket.",
-      "price": 34.99,
-      "image_url": "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=500",
       "category": "Accessories",
       "stock": 100
     },
