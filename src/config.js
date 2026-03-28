@@ -1,10 +1,10 @@
-// API Configuration - Production
-const API_BASE_URL = 'https://badronsite5.great-site.net/backend';
+// API Configuration - Using Netlify Functions as proxy
+const API_BASE_URL = '/.netlify/functions';
 
 export const API_ENDPOINTS = {
-  GET_PRODUCTS: `${API_BASE_URL}/get_products.php`,
-  GET_PRODUCT: `${API_BASE_URL}/get_product.php`,
-  CHECKOUT: `${API_BASE_URL}/checkout.php`
+  GET_PRODUCTS: `${API_BASE_URL}/products`,
+  GET_PRODUCT: `https://badronsite5.great-site.net/backend/get_product.php`,
+  CHECKOUT: `https://badronsite5.great-site.net/backend/checkout.php`
 };
 
 // Debug log
