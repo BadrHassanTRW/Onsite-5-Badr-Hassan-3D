@@ -1,7 +1,5 @@
 // API Configuration
-// Update this URL with your InfinityFree domain
-
-const API_BASE_URL = 'https://yoursite.infinityfreeapp.com/backend';
+const API_BASE_URL = 'https://badronsite5.great-site.net/backend';
 
 // For local development, use:
 // const API_BASE_URL = 'http://localhost/Badr%20Hassan%20Onsite%205%203D/backend';

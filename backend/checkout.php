@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 $host = "sql103.infinityfree.com";
 $db_name = "if0_41499513_ecommerce_store";
 $username = "if0_41499513";
-$password = ""; // Add your password here
+$password = "hLlS3IoaONo";
 
 try {
     $json_data = file_get_contents("php://input");

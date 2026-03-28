@@ -9,7 +9,7 @@ header("Content-Type: application/json; charset=UTF-8");
 $host = "sql103.infinityfree.com";
 $db_name = "if0_41499513_ecommerce_store";
 $username = "if0_41499513";
-$password = ""; // Add your password here
+$password = "hLlS3IoaONo";
 
 try {
     if (!isset($_GET['id']) || empty($_GET['id'])) {
