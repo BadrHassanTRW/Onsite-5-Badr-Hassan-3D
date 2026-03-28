@@ -1,12 +1,8 @@
-// API Configuration - Using Netlify Functions as proxy
-const API_BASE_URL = '/.netlify/functions';
+// API Configuration for local development
+const API_BASE_URL = 'http://localhost/Badr%20Hassan%20Onsite%205%203D/backend';
 
 export const API_ENDPOINTS = {
-  GET_PRODUCTS: `${API_BASE_URL}/products`,
-  GET_PRODUCT: `https://badronsite5.great-site.net/backend/get_product.php`,
-  CHECKOUT: `https://badronsite5.great-site.net/backend/checkout.php`
+  GET_PRODUCTS: `${API_BASE_URL}/get_products.php`,
+  GET_PRODUCT: `${API_BASE_URL}/get_product.php`,
+  CHECKOUT: `${API_BASE_URL}/checkout.php`
 };
-
-// Debug log
-console.log('API Base URL:', API_BASE_URL);
-console.log('Endpoints:', API_ENDPOINTS);

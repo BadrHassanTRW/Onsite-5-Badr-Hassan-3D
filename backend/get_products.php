@@ -5,11 +5,10 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET");
 header("Content-Type: application/json; charset=UTF-8");
 
-// InfinityFree database credentials
-$host = "sql103.infinityfree.com";
-$db_name = "if0_41499513_ecommerce_store";
-$username = "if0_41499513";
-$password = "hLlS3IoaONo";
+$host = "localhost";
+$db_name = "ecommerce_store";
+$username = "root";
+$password = "";
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$db_name", $username, $password);

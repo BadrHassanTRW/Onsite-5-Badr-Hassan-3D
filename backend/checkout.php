@@ -10,11 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit(0);
 }
 
-// InfinityFree database credentials
-$host = "sql103.infinityfree.com";
-$db_name = "if0_41499513_ecommerce_store";
-$username = "if0_41499513";
-$password = "hLlS3IoaONo";
+$host = "localhost";
+$db_name = "ecommerce_store";
+$username = "root";
+$password = "";
 
 try {
     $json_data = file_get_contents("php://input");
