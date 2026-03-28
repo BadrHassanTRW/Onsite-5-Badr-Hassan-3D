@@ -1,6 +1,6 @@
 # ShopEasy E-commerce Website - Project Documentation
 
-## 📋 Project Overview
+## Project Overview
 
 **Project Name:** ShopEasy - Full E-commerce Website  
 **Student:** Badr Hassan  
@@ -8,18 +8,18 @@
 **Purpose:** Final Project  
 **Repository:** https://github.com/BadrHassanTRW/Onsite-5-Badr-Hassan-3D.git
 
-## 🎯 Project Objectives
+## Project Objectives
 
-This project demonstrates a complete, production-ready e-commerce website with:
+This project demonstrates a complete e-commerce website with:
 - Full product catalog management
 - Shopping cart functionality
 - Order processing system
 - Responsive design for all devices
 - Modern web development practices
 
+## System Architecture
 
-## 📊 Database Design
-
+The project uses a three-tier
 ### Products Table
 | Column      | Type         | Description                    |
 |-------------|--------------|--------------------------------|
@@ -381,5 +381,3 @@ If I had more time, I would add:
 **Grade Expected:** A+ (Perfect Score)
 
 ---
-
-*End of Documentation*
