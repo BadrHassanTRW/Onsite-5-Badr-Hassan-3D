@@ -1,4 +1,4 @@
-// Cart state management
+// Cart state management using context API
 import { createContext, useState, useContext, useEffect } from 'react';
 
 const CartContext = createContext();
